@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: ""
-url: "https://sylhare.github.io"
+baseurl: "/Text-Room-Adventure"
+url: "https://usc-csci527-spring2021.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Home                                   # site's title
