@@ -2,10 +2,10 @@
 
 ## Team Members: 
 
-Fei Wang, [Github](https://github.com/FeiWang96)
-Yongcheng Wang, [Github](https://github.com/JeffWang3)
-Kainuo Feng, [Github](https://github.com/nndxg)
-Zhongheng He, [Github](https://github.com/HeZhongheng)
+Fei Wang, [Github](https://github.com/FeiWang96) <br>
+Yongcheng Wang, [Github](https://github.com/JeffWang3) <br>
+Kainuo Feng, [Github](https://github.com/nndxg) <br>
+Zhongheng He, [Github](https://github.com/HeZhongheng) <br>
 
 ## Website
 
