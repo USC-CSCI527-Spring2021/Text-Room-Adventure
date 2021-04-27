@@ -6,14 +6,14 @@ feature-img: "assets/img/pexels/search-map.jpeg"
 ---
 
 # Overview of the Learning Framework
-The game starts with description of the game background $s_0$. At each time step $t$, the agent issues a textual action $a_t \in A_t$ based on the environment description $s_t$. Then the agent receives a reward $r_t$ according to the game score earned by $a_t$. The environment description is updated to $s_{t+1}$. The game stops when the agent reach some special states or the maximum steps.
+The game starts with description of the game background $$s_0$$. At each time step $$t$$, the agent issues a textual action $$a_t \in A_t$$ based on the environment description $$s_t$$. Then the agent receives a reward $$r_t$$ according to the game score earned by $$a_t$$. The environment description is updated to $$s_{t+1}$$. The game stops when the agent reach some special states or the maximum steps.
 
-We define the Q-function as the expected reward of taking the action $a_t$ under the state $s_t$ 
-$$Q(s_t, a_t) = E[r + \gamma \max_{a_{t+1}} Q(s_{t+1}, a_{t+1}) | s_t, a_t],$$
-where $\gamma$ is a discount factor. 
-For inference, we choose the action with the maximum Q-value
-$$\pi(s_t) = \arg\max_{a_t \in A_t} Q(s_t, a_t).$$
-In our framework, the Q-function is fitted by deep text matching networks taking textual descriptions of states and actions as input features.
+We define the Q-function as the expected reward of taking the action $$a_t$$ under the state $$s_t$$:<br><br>
+$$Q(s_t, a_t) = E[r + \gamma \max_{a_{t+1}} Q(s_{t+1}, a_{t+1}) | s_t, a_t]$$, <br><br>
+where $$\gamma$$ is a discount factor. 
+For inference, we choose the action with the maximum Q-value:<br><br>
+$$\pi(s_t) = \arg\max_{a_t \in A_t} Q(s_t, a_t).$$<br><br>
+<br>In our framework, the Q-function is fitted by deep text matching networks taking textual descriptions of states and actions as input features.
 
 
 ![avatar](../assets/img/model/model.JPG)
