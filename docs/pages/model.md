@@ -38,12 +38,17 @@ In detail, BERT is a transformer-based architecture pre trained with two tasks: 
 In our work, we use BERT to encode the textual description and explore the relationship between states and actions.
 
 # History Actions
-Why we use historical Actions?
+In the post-midterm session, we tried to dig out useful internal knowledge and information. And making use of memory information would be the best choice. As you can see, the player’s history actions are continuous, and they are implicitly connected with each other. If we can encode the history actions as supplement information when making decisions, our model might perform better. 
+
+# Global optimal actions
+
+On the other hand, we found that sometimes our model might stick to a local optimal action and ignore the global optimal decision. This may further create a local endless loop. We further add constraints to avoid the endless loop and lead our model to the global optimization choice.
+
 
 # Result
 
-| Game   |      best steps      |  RAND | NAIL | TDQN | DRRN | DRRN_BERT_MEMO | MaxScore
-|----------|:-------------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| Detective |  50 |  113.7 | 136.9 | 169 | 197.8 | 290 | 360 |
-| Deephome |    350 | 1 | 13.3 | 1 | 1 | 25 | 300 |
+| Game   |      best steps      |  RAND | NAIL | TDQN | DRRN | DRRN_BERT | DRRN_BERT_MEMO | MaxScore
+|----------|:-------------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| Detective |  50 |  113.7 | 136.9 | 169 | 197.8 | 200 | 290 | 360 |
+| Deephome |    350 | 1 | 13.3 | 1 | 1 | 14 | 27 | 300 |
 
