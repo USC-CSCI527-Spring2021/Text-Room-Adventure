@@ -38,12 +38,18 @@ In detail, BERT is a transformer-based architecture pre trained with two tasks: 
 In our work, we use BERT to encode the textual description and explore the relationship between states and actions.
 
 # History Actions
-In the post-midterm session, we tried to dig out useful internal knowledge and information. And making use of memory information would be the best choice. As you can see, the player’s history actions are continuous, and they are implicitly connected with each other. If we can encode the history actions as supplement information when making decisions, our model might perform better. 
+<!-- In the post-midterm session, we tried to dig out useful internal knowledge and information. And making use of memory information would be the best choice. As you can see, the player’s history actions are continuous, and they are implicitly connected with each other. If we can encode the history actions as supplement information when making decisions, our model might perform better.  -->
+The history states and actions are also useful for predicting the next action, because the action sequences are continuous and highly related. We combine the current and history states and actions as model input. And implemented two types of history encoders. The first version is simply concatenated the history states and actions to the current state and action sequence. The second version is applying long short-term memory network as memory module. The model architecture is shown in figure below.
+
+![avatar](../assets/img/model/lstm_mem.JPG)
 
 # Global optimal actions
 
-On the other hand, we found that sometimes our model might stick to a local optimal action and ignore the global optimal decision. This may further create a local endless loop. We further add constraints to avoid the endless loop and lead our model to the global optimization choice.
+<!-- On the other hand, we found that sometimes our model might stick to a local optimal action and ignore the global optimal decision. This may further create a local endless loop. We further add constraints to avoid the endless loop and lead our model to the global optimization choice. -->
+According to the case study, we found that our agents sometimes are trapped by circular states. The agent may repeatedly visit the same states.
+To address this problem, we design a count-and-switch operator to break the circular states. The algorithm is shown in Figure below.
 
+![avatar](../assets/img/model/loop.JPG)
 
 # Result
 
